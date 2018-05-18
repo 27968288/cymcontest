@@ -11,6 +11,13 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
+from cymcontest.settings import DEBUG
+
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "cymcontest.settings")
 
 application = get_wsgi_application()
+
+if not DEBUG:    # Running on Heroku
+    from dj_static import Cling
+    application = Cling(get_wsgi_application())
