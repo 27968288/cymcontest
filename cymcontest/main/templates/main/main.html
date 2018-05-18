@@ -6,11 +6,11 @@
     <link rel = "stylesheet" href=" {% static 'main/css/main.css' %}">
   </head>
   <body>
-    <div id="titles"><a id="a5"><h1><i><b>CYM歡樂杯第三屆</b></i></h1></a></div><hr>
+    <div id="titles"><a href="{% url 'main:main' %}"><h1><i><b>CYM歡樂杯第三屆</b></i></h1></a></div><hr>
     <div id="Lside"><button id="closel">關閉</button></div>
     <div id="Rside"><button id="closer">關閉</button></div>
     {% include 'main/menu.html' %}
-    {% block content %}{% endblock %}
+    {% block content %}<class id="pic4"><img src="{% static 'main/img/index.jpg' %}" alt="圖片替代文字" width="60%"></class>{% endblock %}
     <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js></script>
     <script src="{% static 'main/js/conter.js' %}"></script>
   </body>
